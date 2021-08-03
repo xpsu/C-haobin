@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.18)
+project(7 C)
+
+set(CMAKE_C_STANDARD 99)
+
+add_executable(main main.c)
+add_executable(1 1.指针热身.c)
+add_executable(2 2.经典程序_交换两个数的值.c)
+add_executable(3 3.指针与数组1.c)
+add_executable(4 4.确定一个数组需要几个参数.c)
+add_executable(5 5.一个指针变量占几个字节.c)
+add_executable(6 6.指针变量的运算.c)
+add_executable(7 7.传统数组的缺陷.c)
+add_executable(8 8.malloc的使用.c)
+add_executable(9 9.动态一维数组.c)
+add_executable(10 10.多级指针.c)
+add_executable(11 11.静态变量不能跨函数.c)
+add_executable(12 12.动态内存可以跨函数使用.c)
