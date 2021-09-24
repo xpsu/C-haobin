@@ -12,29 +12,7 @@ typedef struct node {
     struct node *pNext;
 } Node;
 
-// 功能: 创建单链表，返回头指针
-Node *Create_list(void);
-
-// 功能: 遍历链表
-void Traverse_list(Node *);
-
-int main(void) {
-    // 定义头节点并置空
-    Node *pHead = NULL;
-
-    // 创建链表,并将头指针指向pHead
-    pHead = Create_list();
-
-    // 遍历链表
-    Traverse_list(pHead);
-
-    // 释放动态内存并置空
-    free(pHead);
-    pHead = NULL;
-
-    return 0;
-}
-
+// 创建一个单链表，并返回头指针
 Node *Create_list(void) {
     // 节点长度
     int length;
@@ -81,6 +59,7 @@ Node *Create_list(void) {
     return pHead;
 }
 
+// 遍历链表
 void Traverse_list(Node *pHead) {
     Node *p = pHead->pNext;
 
@@ -94,4 +73,21 @@ void Traverse_list(Node *pHead) {
     }
 
     printf("\n");
+}
+
+int main(void) {
+    // 定义头节点并置空
+    Node *pHead = NULL;
+
+    // 创建链表,并将头指针指向pHead
+    pHead = Create_list();
+
+    // 遍历链表
+    Traverse_list(pHead);
+
+    // 释放动态内存并置空
+    free(pHead);
+    pHead = NULL;
+
+    return 0;
 }

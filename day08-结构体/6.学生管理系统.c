@@ -16,13 +16,42 @@ typedef struct Students{
 } Student;
 
 // 定义函数：对结构体Student输入
-void inputStudent(Student *, int);
+void inputStudent(Student *pStu, int length) {
+    for (int i = 0; i < length; ++i) {
+        printf("请输入第%d个学生的信息：\n", i + 1);
+        printf("姓名：");
+        scanf("%s", pStu[i].name);
+        // name是数组名，本身就已经是数组首元素的地址,
+        // 所以pArr[i].name 不能改成 &pArr[i].name
+
+        printf("年龄：");
+        scanf("%d", &pStu[i].age);
+        printf("成绩：");
+        scanf("%lf", &pStu[i].score);
+        printf("\n");
+    }
+}
 
 // 定义函数：对成绩降序排序
-void sort(Student *, int);
+void sort(Student *pStu, int length) {
+    for (int i = 0; i < length - 1; ++i) {
+        for (int j = 0; j < length - 1 - i; ++j) {
+            if (pStu[j].score < pStu[j + 1].score) {
+                Student  temp = pStu[j];
+                pStu[j] = pStu[j + 1];
+                pStu[j + 1] = temp;
+            }
+        }
+    }
+}
 
 // 定义函数：对结构体Student输出
-void outputStudent(Student *, int);
+void outputStudent(Student *pStu, int length) {
+    for (int j = 0; j < length; ++j) {
+        printf("第%d名 ", j + 1);
+        printf("姓名:%s 成绩:%lf 年龄:%d \n", pStu[j].name, pStu[j].score, pStu[j].age);
+    }
+}
 
 int main(void) {
     // 输入学生个数
@@ -55,40 +84,6 @@ int main(void) {
     return 0;
 }
 
-void inputStudent(Student *pStu, int length) {
-    for (int i = 0; i < length; ++i) {
-        printf("请输入第%d个学生的信息：\n", i + 1);
-        printf("姓名：");
-        scanf("%s", pStu[i].name);
-        // name是数组名，本身就已经是数组首元素的地址,
-        // 所以pArr[i].name 不能改成 &pArr[i].name
-
-        printf("年龄：");
-        scanf("%d", &pStu[i].age);
-        printf("成绩：");
-        scanf("%lf", &pStu[i].score);
-        printf("\n");
-    }
-}
-
-void sort(Student *pStu, int length) {
-    for (int i = 0; i < length - 1; ++i) {
-        for (int j = 0; j < length - 1 - i; ++j) {
-            if (pStu[j].score < pStu[j + 1].score) {
-                Student  temp = pStu[j];
-                pStu[j] = pStu[j + 1];
-                pStu[j + 1] = temp;
-            }
-        }
-    }
-}
-
-void outputStudent(Student *pStu, int length) {
-    for (int j = 0; j < length; ++j) {
-        printf("第%d名 ", j + 1);
-        printf("姓名:%s 成绩:%lf 年龄:%d \n", pStu[j].name, pStu[j].score, pStu[j].age);
-    }
-}
 /*
  * 总结：
  *      在动态内存中，pArr是一个地址常量，类似于数组名
