@@ -26,10 +26,12 @@ void sort(int *p, int length) {
 }
 
 int main(void) {
-    int a[6] = {2, 9, -34, 76, 0, 100};
+    int a[7] = {2, 9, -34, 76, 0, 100, 10};
 
-    sort(a, 6);
-    traverse(a, 6);
+    int length = sizeof(a) / sizeof(a[0]);
+
+    sort(a, length);
+    traverse(a, length);
 
     return 0;
 }
