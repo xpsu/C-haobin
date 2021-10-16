@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.18)
+cmake_minimum_required()
 project(9 C)
 
 set(CMAKE_C_STANDARD 99)
@@ -14,4 +14,5 @@ add_executable(6 6.求一到一千的和.c)
 add_executable(7 7.c)
 add_executable(8 8.c)
 add_executable(9 9.c)
+target_link_libraries (9 m)
 add_executable(10 10.c)

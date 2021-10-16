@@ -12,23 +12,26 @@
 #include <math.h>
 #include <stdbool.h>
 
-int main(void) {
-    int n;
-    int k;
-    bool b = true;
+// 定义一个函数，判断是否为素数
+bool isPrime(int num) {
+    int k = (int) sqrt((double) num);
 
-    printf("请输入要判断的数字：");
-    scanf("%d", &n);
-
-    k = (int) sqrt((double) n);
     for (int i = 2; i <= k; ++i) {
-        if (n % i == 0) {
-            b = false;
-            break;
+        if (num % i == 0) {
+            return false;
         }
     }
 
-    if (b) {
+    return true;
+}
+
+int main(void) {
+    int num;
+
+    printf("请输入要判断的数字：");
+    scanf("%d", &num);
+
+    if (isPrime(num)) {
         printf("yes!");
     } else {
         printf("no!");
