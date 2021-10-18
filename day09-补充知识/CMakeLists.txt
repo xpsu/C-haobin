@@ -15,4 +15,6 @@ add_executable(7 7.c)
 add_executable(8 8.c)
 add_executable(9 9.c)
 target_link_libraries (9 m)
+
 add_executable(10 10.c)
+target_link_libraries (10 m)

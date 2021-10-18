@@ -5,7 +5,7 @@
 
 // 只定义了一个数据类型，并没有定义变量， 该数据类型的名字是 enum WeekDay
 enum WeekDay {
-    Monday = 1, TuesDay, WednesDay, ThursDay, FriDay, SaturDay, SunDay
+    Monday = 1, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday
 };
 // 第一个枚举成员的默认值为整型的 0，后续枚举成员的值在前一个成员上加 1。
 
@@ -38,7 +38,7 @@ void f(enum WeekDay i) {
 }
 
 int main(void) {
-    f(FriDay);
+    f(Friday);
 
     return 0;
 }

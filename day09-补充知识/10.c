@@ -22,7 +22,7 @@ bool f(int num) {
 }
 
 int main(void) {
-    int num = 1000;
+    int num = 100;
 
     for (int i = 2; i <= num; ++i) {
         if (f(i)) {
