@@ -83,6 +83,8 @@ int main(void) {
     pHead = Create_list();
 
     // 遍历链表
+    printf("-----------\n");
+    printf("遍历输出链表:\n");
     Traverse_list(pHead);
 
     // 释放动态内存并置空
